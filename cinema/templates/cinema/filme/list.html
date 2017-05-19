@@ -1,0 +1,16 @@
+{% extends "cinema/base.html" %}
+   {% block title %}Cinema{% endblock %}
+   {% block content %}
+     <h1>Cinema</h1>
+     {% for filme in filmes %}
+       <h2>
+         <a href="{{ filme.get_absolute_url }}">
+           {{ filme.title }}
+         </a>
+       </h2>
+       <p class="date">
+         Publicado {{ filme.publish }} em {{ filme.author }}
+       </p>
+       {{ filme.body|truncatewords:30|linebreaks }}
+     {% endfor %}
+   {% endblock %}

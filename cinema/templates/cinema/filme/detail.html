@@ -1,0 +1,9 @@
+{% extends "cinema/base.html" %}
+   {% block title %}{{ filme.title }}{% endblock %}
+   {% block content %}
+     <h1>{{ filme.title }}</h1>
+     <p class="date">
+       Published {{ filme.publish }} by {{ filme.author }}
+     </p>
+     {{ filme.body|linebreaks }}
+   {% endblock %}
